@@ -1,5 +1,3 @@
-# streamlit-manizales-tech-talks
-
 # Image predictor
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/jdalzatec/streamlit-manizales-tech-talks/main/image_predictor/app.py)
 
