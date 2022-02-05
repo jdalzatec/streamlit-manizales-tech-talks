@@ -1,6 +1,6 @@
-
 import streamlit as st
 
+st.set_page_config(page_title="Widgets example")
 
 x = st.slider(min_value=-100, max_value=100, label="Number")  # 👈 this is a widget
 st.write(x, "squared is", x * x)

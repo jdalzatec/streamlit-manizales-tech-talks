@@ -2,6 +2,8 @@ import streamlit
 
 from utils import load_model, predict, read_labels
 
+streamlit.set_page_config(page_title="Image predictor", page_icon="random")
+
 model = None
 labels = []
 

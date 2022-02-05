@@ -3,7 +3,9 @@ import pandas
 import time
 from matplotlib import pyplot
 
-streamlit.set_page_config(layout="wide")
+streamlit.set_page_config(
+    layout="wide", page_title="Titanic (as usual)", page_icon="random"
+)
 
 from utils import get_sex_name, get_class_name
 

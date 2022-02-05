@@ -3,6 +3,8 @@ import pandas
 import plotly.express as px
 import streamlit
 
+streamlit.set_page_config(page_title="Computing PI", page_icon="random")
+
 streamlit.markdown("# Computing $\pi$ using Monte Carlo")
 
 streamlit.markdown(
