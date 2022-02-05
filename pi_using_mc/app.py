@@ -3,7 +3,7 @@ import pandas
 import plotly.express as px
 import streamlit
 
-streamlit.title("Computing PI using Monte Carlo")
+streamlit.markdown("# Computing $\pi$ using Monte Carlo")
 
 streamlit.markdown(
     "![monte carlo](https://miro.medium.com/max/700/1*a9nvv3D0l1fD2uDD4dSNgQ.png)"
@@ -42,6 +42,6 @@ if run:
             scaleratio=1,
         )
 
-        streamlit.plotly_chart(fig, use_container_width=True)
+        streamlit.plotly_chart(fig)
 
         streamlit.dataframe(points)
