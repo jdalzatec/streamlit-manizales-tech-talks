@@ -1,26 +1,17 @@
-from io import StringIO
-
 import streamlit
-from h5py import File
-from keras.models import load_model
 
-from utils import predict
+from utils import load_model, predict, read_labels
 
 model = None
 labels = []
 
 model_file = streamlit.file_uploader("Model file uploader:")
 if model_file:
-    model = load_model(File(model_file))
+    model = load_model(model_file)
 
 labels_file = streamlit.file_uploader("Model labels uploader:")
 if labels_file:
-    lines = StringIO(labels_file.getvalue().decode()).readlines()
-    for line in lines:
-        index, *remaining = line.split()
-        index = int(line[0])
-        label = " ".join(remaining).strip()
-        labels.append(label)
+    labels = read_labels(labels_file)
 
 
 if model and labels:

@@ -1,5 +1,9 @@
-from PIL import Image, ImageOps
+from io import StringIO
+
 import numpy as np
+from h5py import File
+from keras.models import load_model as keras_load_model
+from PIL import Image, ImageOps
 
 
 def predict(image, model):
@@ -24,3 +28,17 @@ def predict(image, model):
     # run the inference
     prediction = model.predict(data)
     return prediction[0]
+
+
+def read_labels(labels_file):
+    labels = []
+    lines = StringIO(labels_file.getvalue().decode()).readlines()
+    for line in lines:
+        _, *remaining = line.split()
+        label = " ".join(remaining).strip()
+        labels.append(label)
+    return labels
+
+
+def load_model(model_file):
+    return keras_load_model(File(model_file))
